@@ -52,7 +52,7 @@ Temporary Items
 [Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Ll]ibrary/
+[Ll]ibrary/
 $PROJDIR/Temp/
 $PROJDIR/Library/
 $PROJDIR/Obj/
