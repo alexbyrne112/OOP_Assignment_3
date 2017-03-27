@@ -53,7 +53,17 @@ Temporary Items
 /[Oo]bj/
 /[Bb]uild/
 /[Ll]ibrary/
-sysinfo.txt
+$PROJDIR/Temp/
+$PROJDIR/Library/
+$PROJDIR/Obj/
+ 
+ *.csproj
+ *.unityproj
+ *.sln
+ *.user
+ *.userprefs
+ *.DS_store
+ sysinfo.txt
 *.stackdump
  
 # ============================================= #
