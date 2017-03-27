@@ -49,7 +49,7 @@ Temporary Items
 # =============== #
 # Unity generated #
 # =============== #
-/[Tt]emp/
+[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
 /[Ll]ibrary/
