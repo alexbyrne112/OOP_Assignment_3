@@ -424,3 +424,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  sensitivity: 4
+  camera: {fileID: 1490933290}
