@@ -26,14 +26,16 @@ public class FPSController : MonoBehaviour {
 		moveLeftRight = Input.GetAxis("Horizontal") * speed;
 		
 		rotationX = Input.GetAxis("Mouse X") * sensitivity;
-		rotationY = Input.GetAxis("Mouse Y") * sensitivity;
+		rotationY -= Input.GetAxis("Mouse Y") * sensitivity;
+		
+		rotationY = Mathf.Clamp(rotationY, -70f, 70f);
 		
 		Vector3 movement = new Vector3(moveLeftRight, 0, moveForwardBack);
-		movement = transform.rotation * movement;
-		player.Move(movement * Time.deltaTime);
 		
-		camera.transform.Rotate(-rotationY,0,0);
 		transform.Rotate(0,rotationX,0);
+		camera.transform.localRotation = Quaternion.Euler(rotationY,0,0);
 		
+		movement = transform.rotation * movement;		
+		player.Move(movement * Time.deltaTime);
 	}
 }
