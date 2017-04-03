@@ -6,14 +6,16 @@ public class FPSController : MonoBehaviour {
 	
 	public float speed = 2f;
 	public float sensitivity = 3f;
-	CharacterController player;
+	public float jumpSpeed = 5f;
 	public GameObject camera;
+	CharacterController player;
 	
 	private float moveForwardBack;
 	private float moveLeftRight;
 	private float rotationX;
 	private float rotationY;
 	private float vertVelocity;
+	private bool canJump;
 
 	void Start () 
 	{
@@ -39,6 +41,17 @@ public class FPSController : MonoBehaviour {
 		
 		movement = transform.rotation * movement;		
 		player.Move(movement * Time.deltaTime);
+		
+		if(player.isGrounded == true)
+		{
+			canJump = true; //canJump stops the player from jumping in the air
+		}
+		
+		if(Input.GetButtonDown("Jump") && canJump == true)
+		{
+			vertVelocity += jumpSpeed;
+			canJump = false;
+		}
 	}
 	
 	//FixedUpdate runs every second frame.
