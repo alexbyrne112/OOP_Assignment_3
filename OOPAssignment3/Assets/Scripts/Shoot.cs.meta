@@ -1,10 +1,16 @@
 fileFormatVersion: 2
 guid: 77a15a7dc28d1a54faa33913f28c4ef0
-timeCreated: 1491311189
+timeCreated: 1493130889
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fpscontroller: {instanceID: 0}
+  - grenadePrefab: {fileID: 1598907006730736, guid: 8e9b1b7dad2417e479b3e0954a3e278a,
+      type: 2}
+  - muzzleFlash: {instanceID: 0}
+  - impactEffect: {instanceID: 0}
+  - shot: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
