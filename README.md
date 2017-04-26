@@ -1,7 +1,7 @@
-#Alex Byrne - C15492952
-#Oisin Redmond - C15492202
-#OOP Assignment 3
-#Survive
+# Alex Byrne - C15492952
+# Oisin Redmond - C15492202
+# OOP Assignment 3
+# Survive
 
 
 Oisin and I decided to do a first person shooter game for the end of year OOP assignment.
@@ -32,5 +32,5 @@ one crate offers health and one offers 2 grenades. you must find these crates in
 the assets are mainly downloaded off the unity asset store for free. the particle systems were made by us though.
 All in all the game looks quite good. the graphics arent fantastic but they are still good. We are very happy with this project and hope to get a high mark.
 
-#Video Link
+# Video Link
 https://www.youtube.com/watch?v=EQQ6gv2Z320&feature=youtu.be
