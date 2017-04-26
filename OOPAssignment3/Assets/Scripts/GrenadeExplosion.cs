@@ -24,13 +24,7 @@ public class GrenadeExplosion : MonoBehaviour
 		hitColliders = Physics.OverlapSphere(explosionPoint, blastRadius);
 		
 		foreach(Collider hitCol in hitColliders)
-		{
-			//If the object has a navmesh agent, disable it.
-			if(hitCol.GetComponent<UnityEngine.AI.NavMeshAgent>() != null)
-			{
-				hitCol.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-			}
-			
+		{	
 			if(hitCol.GetComponent<Rigidbody>() != null && hitCol.CompareTag("Enemy"))
 			{
 				hitCol.GetComponent<Rigidbody>().isKinematic = false;

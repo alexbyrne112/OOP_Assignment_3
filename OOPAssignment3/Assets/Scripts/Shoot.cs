@@ -21,11 +21,14 @@ public class Shoot : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public AudioSource shot;
+    public AudioSource explode;
+    public AudioSource ambience;
 
-	void Start()
+    void Start()
 	{
 		myTransform = transform;
 		grenadeCount = 2;
+        ambience.Play();
 	}
 	
 	void Update()
@@ -41,12 +44,12 @@ public class Shoot : MonoBehaviour
 			grenadeCount --;
         }
 		
+		//Vector3 shotPosition = new Vector3(myTransform.position.x + 1, myTransform.position.y, myTransform.position.z);
 		grenadeCountText.text = "Grenades: " + grenadeCount.ToString();
 	}
 	
     public void shooting()
     {
-
         muzzleFlash.Play();
         shot.Play();
 
@@ -54,7 +57,7 @@ public class Shoot : MonoBehaviour
         Debug.DrawRay(myTransform.TransformPoint(0, 0, 1), myTransform.forward, Color.green, 1);
 
         //transform refers to the transform of the object it's attached to
-        if (Physics.Raycast(myTransform.position, myTransform.forward, out hit, range)) //the raycast returns information of the object it hits
+        if (Physics.Raycast(myTransform.TransformPoint(0,0,1), myTransform.forward, out hit, range)) //the raycast returns information of the object it hits
         {
 			
             if (hit.transform.CompareTag("Enemy") && hit.transform.GetComponent<EnemyScript>().health > 10)
@@ -84,6 +87,7 @@ public class Shoot : MonoBehaviour
 		//Creates a reference to the instantiated GameObject.
 		GameObject go = (GameObject)Instantiate(grenadePrefab,myTransform.TransformPoint(0,0,0.5f),myTransform.rotation); //Using positions from transform of player.
 		go.GetComponent<Rigidbody>().AddForce(myTransform.forward * throwingForce, ForceMode.Impulse); //Takes parameters of direction and force, force type
+        explode.Play();
 		Destroy(go,6); //Destroys game object after 6 seconds.
 	}
 }

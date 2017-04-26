@@ -31,11 +31,12 @@ public class FPSController : MonoBehaviour {
 
 	void Start () 
 	{
-		player = GetComponent<CharacterController>();
+        Cursor.visible = false;
+        player = GetComponent<CharacterController>();
 		isDead = false;
 		score = 1000;
 		SetText();
-	}
+    }
 	
 	void Update () 
 	{
