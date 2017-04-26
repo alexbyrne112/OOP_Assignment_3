@@ -7,12 +7,11 @@ public class EnemyScript : MonoBehaviour {
 	public int health;
 	public FPSController fpscontroller;
 	public bool isDead = false;
-	private float nextHealth;
 	
 	void Start ()
 	{
 		health = 50;
-	}
+    }
 	
 	public void Die()
 	{
